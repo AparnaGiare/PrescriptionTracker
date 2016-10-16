@@ -1,0 +1,9 @@
+<h3>Top Pharmacies</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let pharmacy of pharmacies" (click)="gotoDetail(pharmacy)" class="col-1-4">
+    <div class="module pharmacy">
+      <h4>{{pharmacy.name}}</h4>
+    </div>
+  </div>
+</div>
+<pharmacy-search></pharmacy-search>

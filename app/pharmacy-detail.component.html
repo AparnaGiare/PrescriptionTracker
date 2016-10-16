@@ -1,0 +1,14 @@
+<div *ngIf="pharmacy">
+    <h2>{{pharmacy.name}} details!</h2>
+    <div><label>Id: </label>{{pharmacy.id}}</div>
+    <div>
+      <label>Name: </label>
+      <input [(ngModel)]="pharmacy.name" placeholder="name"/>
+    </div>
+      <div><label>Address: </label>{{pharmacy.address}}</div>
+      <div><label>Phone Number: </label>{{pharmacy.phone}}</div>
+      <div><label>Hours: </label>{{pharmacy.hours}}</div>
+      <button (click)="goBack()">Back</button>
+      <button (click)="save()">Save</button>
+
+  </div>

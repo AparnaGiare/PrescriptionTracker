@@ -1,0 +1,26 @@
+<h2>Your Progress so far......</h2>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let prescription of prescriptions">
+        <div class="well">
+          <h3 class="text-primary text-center"><span class="label label-primary">{{prescription.name}}</span></h3><br>
+            <h4 class="text-primary"><span class="label label-primary pull-right">4</span> Total Pills to take today </h4>
+            <h4 class="text-success"><span class="label label-success pull-right">1</span>  Taken so far </h4>
+            <h4 class="text-danger"><span class="label label-danger pull-right">3</span> Balance left </h4>
+        </div>
+        <div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+  aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    40% Complete (success)
+  </div>
+</div>
+<div class="progress skill-bar">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
+                    <span class="skill">Medications Taken<i class="val">90%</i></span>
+                </div>
+            </div>
+      </div>    
+      </div><!--/row-->    
+  </div><!--/col-12-->
+</div><!--/row-->
