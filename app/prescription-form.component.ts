@@ -15,7 +15,9 @@ export class PrescriptionFormComponent {
             'Vicodin', 'zpac'];
   frequency = ['Daily', 'Weekly',
             'Monthly', 'Annual'];
-  model = new Prescription(1, this.meds[0], 2,3,this.frequency[0]);
+
+            //Updated the Prescription Object with 2 new fields
+  model = new Prescription(1,this.meds[0], 0,0,2,3,this.frequency[0]);
   submitted = false;
   
   onSubmit() { this.submitted = true; }
@@ -25,7 +27,7 @@ export class PrescriptionFormComponent {
     active = true;
 
   newPrescription() {
-    this.model = new Prescription(2, '', 0,0,'');
+    this.model = new Prescription(2,'', 0,0,0,0,'');
     this.active = false;
     setTimeout(() => this.active = true, 0);
   }

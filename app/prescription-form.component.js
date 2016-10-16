@@ -16,7 +16,7 @@ var PrescriptionFormComponent = (function () {
             'Vicodin', 'zpac'];
         this.frequency = ['Daily', 'Weekly',
             'Monthly', 'Annual'];
-        this.model = new prescription_1.Prescription(1, this.meds[0], 2, 3, this.frequency[0]);
+        this.model = new prescription_1.Prescription(1, this.meds[0], 0, 0, 2, 3, this.frequency[0]);
         this.submitted = false;
         this.active = true;
     }
@@ -29,7 +29,7 @@ var PrescriptionFormComponent = (function () {
     });
     PrescriptionFormComponent.prototype.newPrescription = function () {
         var _this = this;
-        this.model = new prescription_1.Prescription(2, '', 0, 0, '');
+        this.model = new prescription_1.Prescription(2, '', 0, 0, 0, 0, '');
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 0);
     };
