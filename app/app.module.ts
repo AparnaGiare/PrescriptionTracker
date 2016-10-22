@@ -1,4 +1,4 @@
-import { NgModule }      from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }  from '@angular/router';
@@ -19,6 +19,8 @@ import { DashboardComponent }       from './dashboard.component';
 import { PharmacySearchComponent}   from './pharmacy-search.component';
 import { PrescriptionFormComponent } from './prescription-form.component';
 import { MedicationProgressComponent } from './medicationProgress.component';
+import { HighlightDirective }          from './progressBar.directive';
+
 
 
 
@@ -63,12 +65,15 @@ import { MedicationProgressComponent } from './medicationProgress.component';
     PharmaciesComponent,
     PharmacySearchComponent,
     PrescriptionFormComponent,
-    MedicationProgressComponent
-   ],
+    MedicationProgressComponent,
+    HighlightDirective
+
+   ], 
 
    providers: [
     PharmaciesService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

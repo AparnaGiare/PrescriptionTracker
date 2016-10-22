@@ -1,4 +1,58 @@
 
+span.glyphicon-plus {
+    font-size: 1.75em;
+    font-weight: bolder;
+}
+@keyframes expandWidth {
+   0% { width: 0; }
+   100% { width: auto; }
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+.animate > span:after {
+  display: none;
+}
+.meter { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.meter > span:after, .animate > span > span {
+  animation: move 2s linear infinite;
+}
+.orange > span {
+  background-color: #f1a165;
+  background-image: linear-gradient(to bottom, #f1a165, #f36d0a);
+}
+
+.red > span {
+  background-color: #f0a3a3;
+  background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
+}
+.slide.ng-enter {
+  transition:0.5s linear all;
+  transform:translateY(-100px);
+}
+.slide.ng-enter.ng-enter-active {
+  transform:translateY(0);
+}
+/* the transition tells ngAnimate to make the animation happen */
+.slide.ng-enter { transition:0.5s linear all; }
+
+/* this extra CSS class will be absorbed into the transition
+since the $animateCss code is adding the class */
+.maroon-setting { background:red; }
 * {
     margin: 0;
     padding: 0;
@@ -230,6 +284,9 @@ ul.menu li {
     position: relative;
     z-index: 0;
 }
+
+
+
 /* Bootstrap CSS*/
 
 /*!

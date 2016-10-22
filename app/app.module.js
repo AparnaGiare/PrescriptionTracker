@@ -25,6 +25,7 @@ var dashboard_component_1 = require('./dashboard.component');
 var pharmacy_search_component_1 = require('./pharmacy-search.component');
 var prescription_form_component_1 = require('./prescription-form.component');
 var medicationProgress_component_1 = require('./medicationProgress.component');
+var progressBar_directive_1 = require('./progressBar.directive');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -70,12 +71,14 @@ var AppModule = (function () {
                 pharmacies_component_1.PharmaciesComponent,
                 pharmacy_search_component_1.PharmacySearchComponent,
                 prescription_form_component_1.PrescriptionFormComponent,
-                medicationProgress_component_1.MedicationProgressComponent
+                medicationProgress_component_1.MedicationProgressComponent,
+                progressBar_directive_1.HighlightDirective
             ],
             providers: [
                 pharmacies_service_1.PharmaciesService
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
