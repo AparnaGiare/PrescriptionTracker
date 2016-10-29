@@ -2,8 +2,6 @@
      <div  [hidden]="submitted">
     <h1>Prescription Form</h1>
     <form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
-        {{diagnostic}}
-
      <div class="form-group">
          <label for="meds">Medication Name</label>
         <select class="form-control" id="name" required
@@ -39,9 +37,9 @@
             
         </div>
 
-      <button type="submit" class="btn btn-default">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newPrescription()">New prescription</button>
-      <button type="button" class="btn btn-primary" (click)="addDetails()">Add Details</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+     <!-- <button type="button" class="btn btn-default" (click)="newPrescription()">New prescription</button> -->
+      <button type="button" class="btn btn-success" (click)="addDetails()">Add Details</button>
 
 
     </form>

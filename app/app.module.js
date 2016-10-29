@@ -17,6 +17,7 @@ require('./rxjs-extensions');
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
+//import { PrescriptionDataService }  from './prescription-data';
 var app_component_1 = require('./app.component');
 var pharmacy_detail_component_1 = require('./pharmacy-detail.component');
 var pharmacies_component_1 = require('./pharmacies.component');
@@ -26,6 +27,9 @@ var pharmacy_search_component_1 = require('./pharmacy-search.component');
 var prescription_form_component_1 = require('./prescription-form.component');
 var medicationProgress_component_1 = require('./medicationProgress.component');
 var progressBar_directive_1 = require('./progressBar.directive');
+var modal_component_1 = require('./modal/modal.component');
+var prescription_service_1 = require('./prescription.service');
+//import { ModalService}          from './modal.directive';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,6 +40,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                //InMemoryWebApiModule.forRoot(PrescriptionDataService),
                 router_1.RouterModule.forRoot([
                     {
                         path: '',
@@ -72,10 +77,12 @@ var AppModule = (function () {
                 pharmacy_search_component_1.PharmacySearchComponent,
                 prescription_form_component_1.PrescriptionFormComponent,
                 medicationProgress_component_1.MedicationProgressComponent,
-                progressBar_directive_1.HighlightDirective
+                progressBar_directive_1.HighlightDirective,
+                modal_component_1.ModalComponent
             ],
             providers: [
-                pharmacies_service_1.PharmaciesService
+                pharmacies_service_1.PharmaciesService,
+                prescription_service_1.PrescriptionService
             ],
             bootstrap: [app_component_1.AppComponent],
             schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]

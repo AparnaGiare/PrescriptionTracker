@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Concerta",
+        "totalDailyAmount": 4,
+		"pillTakenToday": 1,
+        "dosage": 2,
+        "frequencyAmount": 1,
+        "frequency": "Daily"
+    },
+    {
+        "name": "Vicodin",
+        "totalDailyAmount": 4,
+		"pillTakenToday": 2,
+        "dosage": 2,
+        "frequencyAmount": 1,
+        "frequency": "Daily"
+    },
+    {
+        "name": "Ibuprofen",
+        "totalDailyAmount": 4,
+		"pillTakenToday": 3,
+        "dosage": 2, 
+        "frequencyAmount": 1, 
+        "frequency": "Daily"
+    }
+
+      ]
+ 

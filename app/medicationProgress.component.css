@@ -1,5 +1,12 @@
-
+.dark{
+    color: black;
+    size: 25em;
+}
 span.glyphicon-plus {
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+span.glyphicon-repeat {
     font-size: 1.75em;
     font-weight: bolder;
 }

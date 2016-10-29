@@ -10,6 +10,8 @@ import './rxjs-extensions';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+//import { PrescriptionDataService }  from './prescription-data';
+
 
 import { AppComponent }             from './app.component';
 import { PharmacyDetailComponent }  from './pharmacy-detail.component';
@@ -20,6 +22,9 @@ import { PharmacySearchComponent}   from './pharmacy-search.component';
 import { PrescriptionFormComponent } from './prescription-form.component';
 import { MedicationProgressComponent } from './medicationProgress.component';
 import { HighlightDirective }          from './progressBar.directive';
+import { ModalComponent}              from './modal/modal.component';
+import { PrescriptionService}         from './prescription.service';
+//import { ModalService}          from './modal.directive';
 
 
 
@@ -30,6 +35,7 @@ import { HighlightDirective }          from './progressBar.directive';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    //InMemoryWebApiModule.forRoot(PrescriptionDataService),
     RouterModule.forRoot([
         {
           path: '',
@@ -66,12 +72,13 @@ import { HighlightDirective }          from './progressBar.directive';
     PharmacySearchComponent,
     PrescriptionFormComponent,
     MedicationProgressComponent,
-    HighlightDirective
-
+    HighlightDirective,
+    ModalComponent
    ], 
 
    providers: [
-    PharmaciesService
+    PharmaciesService,
+    PrescriptionService
   ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

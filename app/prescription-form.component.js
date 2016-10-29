@@ -19,15 +19,11 @@ var PrescriptionFormComponent = (function () {
         //Updated the Prescription Object with 2 new fields
         this.model = new prescription_1.Prescription(1, this.meds[0], 0, 0, 2, 3, this.frequency[0]);
         this.submitted = false;
+        // TODO: Remove this when we're done
+        //get diagnostic() { return JSON.stringify(this.model); }
         this.active = true;
     }
     PrescriptionFormComponent.prototype.onSubmit = function () { this.submitted = true; };
-    Object.defineProperty(PrescriptionFormComponent.prototype, "diagnostic", {
-        // TODO: Remove this when we're done
-        get: function () { return JSON.stringify(this.model); },
-        enumerable: true,
-        configurable: true
-    });
     PrescriptionFormComponent.prototype.newPrescription = function () {
         var _this = this;
         this.model = new prescription_1.Prescription(2, '', 0, 0, 0, 0, '');
