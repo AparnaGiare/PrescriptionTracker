@@ -39,14 +39,13 @@ var MedicationProgressComponent = (function () {
         this.selectedPrescription = prescription;
     };
     MedicationProgressComponent.prototype.getPrescriptions = function () {
-        var _this = this;
-        this.prescriptionService
+        /*this.prescriptionService
             .getPrescriptions()
-            .then(function (prescriptions) { return _this.prescriptions = prescriptions; });
+            .then(prescriptions => this.prescriptions = prescriptions)*/
     };
     MedicationProgressComponent.prototype.ngOnInit = function () {
         this.getPrescriptions();
-        console.log("LENGTH OG THE ARRAY " + this.getPrescriptions.length);
+        //console.log("LENGTH OG THE ARRAY " + this.getPrescriptions.length);
         // this.refreshPrescriptions();
         //this.configuredPrescriptions = this.prescriptionService.getDashboardPrescriptions();
     };
@@ -59,7 +58,7 @@ var MedicationProgressComponent = (function () {
  
      }*/
     MedicationProgressComponent.prototype.addToDashboard = function (prescription) {
-        console.log('adding prescription', prescription);
+        //console.log('adding prescription', prescription);
         //this.prescriptionService.addToDashboard(prescription);
         //    prescription.name.trim();
         /*if (!prescription.name) { return; }

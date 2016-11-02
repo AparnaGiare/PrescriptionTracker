@@ -64,14 +64,14 @@ export class MedicationProgressComponent  implements OnInit {
       } 
 
     getPrescriptions(): void{
-        this.prescriptionService
+        /*this.prescriptionService
             .getPrescriptions()
-            .then(prescriptions => this.prescriptions = prescriptions)
+            .then(prescriptions => this.prescriptions = prescriptions)*/
 
     }
      ngOnInit(): void {
         this.getPrescriptions();
-        console.log("LENGTH OG THE ARRAY " + this.getPrescriptions.length);
+        //console.log("LENGTH OG THE ARRAY " + this.getPrescriptions.length);
        // this.refreshPrescriptions();
         //this.configuredPrescriptions = this.prescriptionService.getDashboardPrescriptions();
 
@@ -88,7 +88,7 @@ export class MedicationProgressComponent  implements OnInit {
     }*/
 
      addToDashboard(prescription: Prescription) {
-        console.log('adding prescription', prescription);
+        //console.log('adding prescription', prescription);
         //this.prescriptionService.addToDashboard(prescription);
        //    prescription.name.trim();
         /*if (!prescription.name) { return; }
