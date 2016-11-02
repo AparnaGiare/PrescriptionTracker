@@ -16,5 +16,5 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
-  title = 'Pharmacies Near you';
+  title = 'Prescription Tracker';
 }

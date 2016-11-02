@@ -1,11 +1,11 @@
-<h2>Your Progress so far......</h2>
+<h2>Your Daily Progress</h2>
 <div class="row">
   <div class="col-sm-12">
     <div class="row">
                 
       <div class="col-md-3" *ngFor="let prescription of prescriptions" >
         <div class="well">
-          <h3 class="text-primary text-center"><span class="label label-primary">{{prescription.id}} --  {{prescription.name}}</span></h3><br>
+          <h3 class="text-primary text-center"><span class="label label-primary">{{prescription.id}} --  {{prescription.rxname}}</span></h3><br>
             <h4 class="text-primary"><span class="label label-primary pull-right">{{prescription.totalDailyAmount}}</span> Total Pills to take today </h4>
             <h4 class="text-success"><span class="label label-success pull-right">{{prescription.pillTakenToday}}</span>  Taken so far </h4>
             <h4 class="text-danger"><span class="label label-danger pull-right">{{prescription.totalDailyAmount - prescription.pillTakenToday}}</span> Balance left </h4>
@@ -20,8 +20,11 @@
       <div class="col-md-2">
         <div class="well">
           <h4 class="text-success"><button [class.selected]="active === true"  (click)="configModal.open($event, active)" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span><span class="label label-primary pull-left">Add Prescription</span></button></h4>
-
-            <button  (click)="refreshPrescriptions()" type="button" class="btn btn-info">Refresh Prescription</button>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+          
+            <!-- <button  (click)="refreshPrescriptions()" type="button" class="btn btn-info">Refresh Prescription</button> -->
                       
 
       </div>
@@ -37,9 +40,9 @@
   <form action="#" *ngIf="active">
 
         <div class="form-group">
-         <label class="dark" for="meds">Medication Name</label>
-        <input  type="text" class="form-control" id="medsName" required name="meds"
-          [(ngModel)]="prescriptionModel.name" #medsName="ngModel">
+         <label class="dark" for="rxname">Medication Name</label>
+        <input  type="text" class="form-control" id="rxname" required name="rxname"
+          [(ngModel)]="prescriptionModel.rxname" #medsName="ngModel">
      </div>
       <div class="form-group">
         <label class="dark" for="dosage">Dosage</label>

@@ -13,18 +13,18 @@ var core_1 = require('@angular/core');
 var prescription_service_1 = require('./prescription.service');
 var prescription_1 = require('./prescription');
 var MedicationProgressComponent = (function () {
-    function MedicationProgressComponent(prescriptionService, router) {
-        this.prescriptionService = prescriptionService;
+    function MedicationProgressComponent(router, prescriptionService) {
         this.router = router;
+        this.prescriptionService = prescriptionService;
         this.active = true;
-        this.model = new prescription_1.Prescription(4, "", 0, 0, 0, 0, "Daily");
+        this.prescriptionModel = new prescription_1.Prescription(4, "", 0, 0, 0, 0, "Daily");
         this.title = "Medication Progress";
         //balanceMedication: number;
         //prescriptions: Prescription[];
         this.prescriptions = [
-            { id: 1, name: 'Concerta', totalDailyAmount: 4, pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
-            { id: 2, name: 'Vicodin', totalDailyAmount: 4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
-            { id: 3, name: 'Ibuprofen', totalDailyAmount: 4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily' }
+            { id: 1, rxname: 'Concerta', totalDailyAmount: 4, pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
+            { id: 2, rxname: 'Vicodin', totalDailyAmount: 4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
+            { id: 3, rxname: 'Ibuprofen', totalDailyAmount: 4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily' }
         ];
     }
     MedicationProgressComponent.prototype.getStyle = function () {
@@ -99,11 +99,11 @@ var MedicationProgressComponent = (function () {
     MedicationProgressComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-medicationPregress',
+            selector: 'my-medicationProgress',
             templateUrl: 'medicationProgress.component.html',
             styleUrls: ['medicationProgress.component.css']
         }), 
-        __metadata('design:paramtypes', [prescription_service_1.PrescriptionService, router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, prescription_service_1.PrescriptionService])
     ], MedicationProgressComponent);
     return MedicationProgressComponent;
 }());

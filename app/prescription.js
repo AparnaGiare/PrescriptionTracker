@@ -1,8 +1,8 @@
 "use strict";
 var Prescription = (function () {
-    function Prescription(id, name, totalDailyAmount, pillTakenToday, dosage, frequencyAmount, frequency) {
+    function Prescription(id, rxname, totalDailyAmount, pillTakenToday, dosage, frequencyAmount, frequency) {
         this.id = id;
-        this.name = name;
+        this.rxname = rxname;
         this.totalDailyAmount = totalDailyAmount;
         this.pillTakenToday = pillTakenToday;
         this.dosage = dosage;

@@ -23,7 +23,7 @@ import { Prescription } from './prescription';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-medicationPregress',
+  selector: 'my-medicationProgress',
   templateUrl: 'medicationProgress.component.html',
   styleUrls: [ 'medicationProgress.component.css' ]
 })
@@ -41,11 +41,12 @@ export class MedicationProgressComponent  implements OnInit {
             'Monthly', 'Annual'];
 
     active = true;
-    model = new Prescription(4,"", 0,0,0,0,"Daily");
+    prescriptionModel = new Prescription(4,"", 0,0,0,0,"Daily");
 
 
-      constructor(private prescriptionService: PrescriptionService,
-        private router: Router) {
+      constructor( private router: Router,
+        private prescriptionService: PrescriptionService,
+       ) {
 
       }
 
@@ -113,9 +114,9 @@ export class MedicationProgressComponent  implements OnInit {
     //balanceMedication: number;
     //prescriptions: Prescription[];
   prescriptions : Prescription[] = [
-        {id: 1, name: 'Concerta', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
-        {id: 2, name: 'Vicodin', totalDailyAmount:4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
-        {id: 3, name: 'Ibuprofen', totalDailyAmount:4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily'}
+        {id: 1, rxname: 'Concerta', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
+        {id: 2, rxname: 'Vicodin', totalDailyAmount:4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
+        {id: 3, rxname: 'Ibuprofen', totalDailyAmount:4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily'}
     ];
 
 

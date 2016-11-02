@@ -1,3 +1,42 @@
+.container {
+ margin: 1%;
+ background-image: url(../images/pexels-photo-163944.jpg);
+ background-size: 1600px 800px;
+ border: 2px solid black;
+ background-repeat:no-repeat;
+ display: compact;
+ font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container_transparent {
+ margin: 40px;
+ background-color: #ffffff;
+     border: 1px solid black;
+    /*opacity: 0.6;*/
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    /*opacity: 0.6;*/
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.darktext {
+    margin: 1%;
+    font-weight: bolder;
+    size: 50px;
+    color: #000000;
+    opacity: 2;
+}
+.darktext2 {
+    padding-left: 50px;
+    font-weight: bolder;
+    color: #000000;
+    opacity: 1;
+}
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
