@@ -13,13 +13,13 @@ var ModalComponent = (function () {
     function ModalComponent() {
         this.isOpen = false;
         //        {id: 1, name: 'Concerta', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
-        this.presciptionModal = { id: 0, name: '', totalDailyAmount: 0, pillTakenToday: 0, dosage: 0, frequencyAmount: 0, frequency: '' };
+        this.presciptionModal = { id: 0, rxname: "e", totalDailyAmount: 0, pillTakenToday: 0, dosage: 0, frequencyAmount: 0, frequency: '' };
         this.confirm = new core_1.EventEmitter();
     }
     ModalComponent.prototype.open = function (prescription) {
         this.presciptionModal = {
             id: 4,
-            name: prescription.name,
+            rxname: prescription.rxname,
             totalDailyAmount: prescription.totalDailyAmount,
             pillTakenToday: prescription.pillTakenToday,
             dosage: prescription.dosage,

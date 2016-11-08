@@ -25,6 +25,12 @@ import { HighlightDirective }          from './progressBar.directive';
 import { ModalComponent}              from './modal/modal.component';
 import { PrescriptionService}         from './prescription.service';
 //import { ModalService}          from './modal.directive';
+import { medicationDashboardComponent } from './medFrequencyViews/medicationDashboard.component';
+import { DailyProgressComponent } from './medFrequencyViews/dailyPrescription.component';
+import { WeeklyProgressComponent } from './medFrequencyViews/weeklyPrescription.component';
+import { MonthlyProgressComponent } from './medFrequencyViews/monthlyPrescription.component';
+
+
 
 
 
@@ -59,8 +65,27 @@ import { PrescriptionService}         from './prescription.service';
           component: PharmaciesComponent
         },
         {
-          path: 'medicationProgress',
-          component: MedicationProgressComponent
+          path: 'medicationDashBoard',
+          component: medicationDashboardComponent,
+            children :[
+              {
+                  path: '',
+                  redirectTo: 'dailyMedicationFrequency',
+                  
+             },
+             {
+                  path: 'dailyMedicationFrequency',
+                  component: DailyProgressComponent
+             },
+             {
+                  path: 'weeklyMedicationFrequency',
+                  component: WeeklyProgressComponent
+             },
+             {
+                  path: 'monthlyMedicationFrequency',
+                  component: MonthlyProgressComponent
+             }
+           ]
         }
     ])
    ],
@@ -73,7 +98,11 @@ import { PrescriptionService}         from './prescription.service';
     PrescriptionFormComponent,
     MedicationProgressComponent,
     HighlightDirective,
-    ModalComponent
+    ModalComponent,
+    medicationDashboardComponent,
+    DailyProgressComponent,
+    WeeklyProgressComponent,
+    MonthlyProgressComponent
    ], 
 
    providers: [

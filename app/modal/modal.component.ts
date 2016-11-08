@@ -129,15 +129,13 @@ import { Prescription } from '../prescription';
 export class ModalComponent {
     private isOpen: boolean = false;
     //        {id: 1, name: 'Concerta', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
-    private presciptionModal: Prescription = {id: 0, name: '', totalDailyAmount: 0,pillTakenToday: 0, dosage: 0, frequencyAmount: 0, frequency: ''};
+    private presciptionModal: Prescription = {id: 0, rxname: "e", totalDailyAmount: 0,pillTakenToday: 0, dosage: 0, frequencyAmount: 0, frequency: ''};
     @Output() confirm: EventEmitter<any> = new EventEmitter();
-
     constructor() { }
-
     open(prescription: Prescription) {
         this.presciptionModal = {
             id: 4, 
-            name: prescription.name,
+            rxname: prescription.rxname,
             totalDailyAmount: prescription.totalDailyAmount,
             pillTakenToday: prescription.pillTakenToday,
             dosage: prescription.dosage, 
@@ -146,14 +144,11 @@ export class ModalComponent {
         };
         this.isOpen = true;
     }
-
     ok() {
         this.isOpen = false;
         this.confirm.emit(this.presciptionModal);
     }
-
     cancel() {
         this.isOpen = false;
     }
-
 }

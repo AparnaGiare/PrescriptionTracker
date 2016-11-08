@@ -30,6 +30,10 @@ var progressBar_directive_1 = require('./progressBar.directive');
 var modal_component_1 = require('./modal/modal.component');
 var prescription_service_1 = require('./prescription.service');
 //import { ModalService}          from './modal.directive';
+var medicationDashboard_component_1 = require('./medFrequencyViews/medicationDashboard.component');
+var dailyPrescription_component_1 = require('./medFrequencyViews/dailyPrescription.component');
+var weeklyPrescription_component_1 = require('./medFrequencyViews/weeklyPrescription.component');
+var monthlyPrescription_component_1 = require('./medFrequencyViews/monthlyPrescription.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -64,8 +68,26 @@ var AppModule = (function () {
                         component: pharmacies_component_1.PharmaciesComponent
                     },
                     {
-                        path: 'medicationProgress',
-                        component: medicationProgress_component_1.MedicationProgressComponent
+                        path: 'medicationDashBoard',
+                        component: medicationDashboard_component_1.medicationDashboardComponent,
+                        children: [
+                            {
+                                path: '',
+                                redirectTo: 'dailyMedicationFrequency',
+                            },
+                            {
+                                path: 'dailyMedicationFrequency',
+                                component: dailyPrescription_component_1.DailyProgressComponent
+                            },
+                            {
+                                path: 'weeklyMedicationFrequency',
+                                component: weeklyPrescription_component_1.WeeklyProgressComponent
+                            },
+                            {
+                                path: 'monthlyMedicationFrequency',
+                                component: monthlyPrescription_component_1.MonthlyProgressComponent
+                            }
+                        ]
                     }
                 ])
             ],
@@ -78,7 +100,11 @@ var AppModule = (function () {
                 prescription_form_component_1.PrescriptionFormComponent,
                 medicationProgress_component_1.MedicationProgressComponent,
                 progressBar_directive_1.HighlightDirective,
-                modal_component_1.ModalComponent
+                modal_component_1.ModalComponent,
+                medicationDashboard_component_1.medicationDashboardComponent,
+                dailyPrescription_component_1.DailyProgressComponent,
+                weeklyPrescription_component_1.WeeklyProgressComponent,
+                monthlyPrescription_component_1.MonthlyProgressComponent
             ],
             providers: [
                 pharmacies_service_1.PharmaciesService,
