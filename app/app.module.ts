@@ -9,21 +9,21 @@ import './rxjs-extensions';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './inMemoryDataService/in-memory-data.service';
 //import { PrescriptionDataService }  from './prescription-data';
 
 
 import { AppComponent }             from './app.component';
-import { PharmacyDetailComponent }  from './pharmacy-detail.component';
-import { PharmaciesComponent }      from './pharmacies.component';
-import { PharmaciesService }        from './pharmacies.service';
-import { DashboardComponent }       from './dashboard.component';
-import { PharmacySearchComponent}   from './pharmacy-search.component';
-import { PrescriptionFormComponent } from './prescription-form.component';
-import { MedicationProgressComponent } from './medicationProgress.component';
-import { HighlightDirective }          from './progressBar.directive';
+import { PharmacyDetailComponent }  from './pharmacyDetail/pharmacy-detail.component';
+import { PharmaciesComponent }      from './pharmacies/pharmacies.component';
+import { PharmaciesService }        from './pharmaciesService/pharmacies.service';
+import { DashboardComponent }       from './dashboard/dashboard.component';
+import { PharmacySearchComponent}   from './pharmacySearch/pharmacy-search.component';
+import { PrescriptionFormComponent } from './prescriptionForm/prescription-form.component';
+import { MedicationProgressComponent } from './medicationProgress/medicationProgress.component';
+import { HighlightDirective }          from './progressBar/progressBar.directive';
 import { ModalComponent}              from './modal/modal.component';
-import { PrescriptionService}         from './prescription.service';
+import { PrescriptionService}         from './prescriptionService/prescription.service';
 //import { ModalService}          from './modal.directive';
 import { medicationDashboardComponent } from './medFrequencyViews/medicationDashboard.component';
 import { DailyProgressComponent } from './medFrequencyViews/dailyPrescription.component';

@@ -15,8 +15,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 //import { Prescription } from './prescription';
 import { OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { PrescriptionService } from '../prescription.service';
-import { Prescription } from '../prescription';
+import { PrescriptionService } from '../prescriptionService/prescription.service';
+import { Prescription } from '../prescription//prescription';
 
 
 
@@ -24,8 +24,8 @@ import { Prescription } from '../prescription';
 @Component({
   moduleId: module.id,
   selector: 'my-medicationProgress',
-  templateUrl: 'medicationView.component.html',
-  styleUrls: [ 'medicationView.component.css' ]
+  templateUrl: './medicationView.component.html',
+  styleUrls: [ './medicationView.component.css' ]
 })
 
 export class DailyProgressComponent  implements OnInit {

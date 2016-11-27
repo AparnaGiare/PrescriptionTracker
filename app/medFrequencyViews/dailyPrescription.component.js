@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
-var prescription_service_1 = require('../prescription.service');
-var prescription_1 = require('../prescription');
+var prescription_service_1 = require('../prescriptionService/prescription.service');
+var prescription_1 = require('../prescription//prescription');
 var DailyProgressComponent = (function () {
     function DailyProgressComponent(router, prescriptionService) {
         this.router = router;
@@ -111,8 +111,8 @@ var DailyProgressComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-medicationProgress',
-            templateUrl: 'medicationView.component.html',
-            styleUrls: ['medicationView.component.css']
+            templateUrl: './medicationView.component.html',
+            styleUrls: ['./medicationView.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, prescription_service_1.PrescriptionService])
     ], DailyProgressComponent);

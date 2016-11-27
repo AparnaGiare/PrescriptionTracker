@@ -1,6 +1,6 @@
 import {Component, Output, EventEmitter } from '@angular/core';
 
-import { Prescription } from '../prescription';
+import { Prescription } from '../prescription/prescription';
 
 @Component({
     selector: 'modal',
