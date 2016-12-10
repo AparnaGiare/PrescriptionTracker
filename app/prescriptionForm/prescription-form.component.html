@@ -15,7 +15,7 @@
         <input class="form-control" id="rxname" required
           [(ngModel)]="model.rxname" name="rxname" #name="ngModel">
         
-        <div [hidden]="name.valid || name.pristine" 
+        <div [hidden]="name.valid" 
              class="alert alert-danger">
           Name is required
         </div>
@@ -24,28 +24,35 @@
       <div class="form-group darktext">
         <label for="dosage">Dosage</label>
         <input type="number" class="form-control" id="dosage" required [(ngModel)]="model.dosage" name="dosage" #dosage="ngModel">
-        <div [hidden]="dosage.valid || dosage.pristine" 
+        <div [hidden]="dosage.valid" 
              class="alert alert-danger">
           Dosage is required
         </div>
       </div>
+     <div class="form-group darktext">
+        <label  for="dosageType">Dosage Type</label>
+        <select class="form-control" id="dosageType" required [(ngModel)]="model.dosageType" name="dosageType">
+                <option *ngFor="let d of dosageType" [value]="d">{{d}}</option>
+        </select>
+        </div>
+
+
        <div class="form-group darktext">
         <label  for="frequencyAmount">How many times</label>
         <input type="number" class="form-control" id="frequencyAmount" required [(ngModel)]="model.frequencyAmount" name="frequencyAmount" #frequencyAmount="ngModel">
-       <div [hidden]="frequencyAmount.valid || frequencyAmount.pristine" 
+       <div [hidden]="frequencyAmount.valid" 
              class="alert alert-danger">
           Amount is required
         </div>
       </div>
         <div class="form-group darktext">
          <label for="frequency">Frequency</label>
-            <select class="form-control" id="frequency" required [(ngModel)]="model.frequency" name="frequency">
-                <option *ngFor="let f of frequency" [value]="f">{{f}}</option>
-            </select>
+            <input type="text" class="form-control" id="frequency" required [(ngModel)]="model.frequency" name="frequency" [value]="Daily">
+          
             
         </div>
 
-      <button type="submit" class="btn btn-primary darktext">Submit</button>
+      <button type="submit" [disabled]="!frequencyAmount.valid || !dosage.valid || !name.valid" class="btn btn-primary darktext">Submit</button>
       <button type="reset" class="btn btn-default darktext">Clear Form</button>
      <!-- <button type="button" class="btn btn-default" (click)="newPrescription()">New prescription</button> -->
      <!-- <button type="button" class="btn btn-success" (click)="addDetails()">Add Details</button> -->
@@ -63,6 +70,10 @@
         <div class="row">
             <div class="col-xs-3 darktext2">Dosage</div>
             <div class="col-xs-9 pull-left darktext2">{{ model.dosage }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 darktext2">Dosage Type</div>
+            <div class="col-xs-9 pull-left darktext2">{{ model.dosageType }}</div>
         </div>
          <div class="row">
             <div class="col-xs-3 darktext2">How many times</div>

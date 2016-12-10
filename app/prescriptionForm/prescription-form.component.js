@@ -14,8 +14,8 @@ var PrescriptionFormComponent = (function () {
     function PrescriptionFormComponent() {
         this.meds = ['Ibuprofen', 'Concerta',
             'Vicodin', 'zpac'];
-        this.frequency = ['Daily', 'Weekly',
-            'Monthly', 'Annual'];
+        this.frequency = ['Daily'];
+        this.dosageType = ['Mg', 'Ml', 'Teaspoon'];
         //Updated the Prescription Object with 2 new fields
         this.model = new prescription_1.Prescription(1, this.meds[0], 0, 0, 2, 3, this.frequency[0]);
         this.submitted = false;
