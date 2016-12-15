@@ -14,8 +14,23 @@ var PrescriptionFormComponent = (function () {
     function PrescriptionFormComponent() {
         this.meds = ['Ibuprofen', 'Concerta',
             'Vicodin', 'zpac'];
-        this.frequency = ['Daily'];
-        this.dosageType = ['Mg', 'Ml', 'Teaspoon'];
+        this.frequency = ['Daily', 'Weekly', 'Monthly'];
+        this.dosageType = ['Mg', 'Ml', 'Teaspoon', 'Pills'];
+        this.days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+        // check: any = []
+        // arrayCheck = [{'key11':'value11'},{'key11':'value12'},{'key11':'value13'},{'key11':'value14'},{'key11':'value15'}];
+        // demo2 = [1,2,3,4,5]
+        // demoChk: any = [];
+        // updateChecked2(value: any,event: any){
+        //   if(event.target.checked){
+        //     this.demoChk.push(value);
+        //   }
+        //   else if (!event.target.checked){
+        //     let indexx = this.demoChk.indexOf(value);
+        //     this.demoChk.splice(indexx,1);
+        //   }
+        //   console.log(this.demoChk)
+        // }
         //Updated the Prescription Object with 2 new fields
         this.model = new prescription_1.Prescription(1, this.meds[0], 0, 0, 2, 3, this.frequency[0]);
         this.submitted = false;

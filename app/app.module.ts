@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }  from '@angular/router';
 import { HttpModule }    from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import './rxjs-extensions';
 
 
@@ -29,7 +31,7 @@ import { medicationDashboardComponent } from './medFrequencyViews/medicationDash
 import { DailyProgressComponent } from './medFrequencyViews/dailyPrescription.component';
 import { WeeklyProgressComponent } from './medFrequencyViews/weeklyPrescription.component';
 import { MonthlyProgressComponent } from './medFrequencyViews/monthlyPrescription.component';
-
+import { ApprovalnModalComponent } from './approvalModal/approval.modal.component';
 
 
 
@@ -39,6 +41,7 @@ import { MonthlyProgressComponent } from './medFrequencyViews/monthlyPrescriptio
   imports: [ 
     BrowserModule,    
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     //InMemoryWebApiModule.forRoot(PrescriptionDataService),
@@ -102,7 +105,8 @@ import { MonthlyProgressComponent } from './medFrequencyViews/monthlyPrescriptio
     medicationDashboardComponent,
     DailyProgressComponent,
     WeeklyProgressComponent,
-    MonthlyProgressComponent
+    MonthlyProgressComponent,
+    ApprovalnModalComponent
    ], 
 
    providers: [

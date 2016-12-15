@@ -17,6 +17,8 @@ import { OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { PrescriptionService } from '../prescriptionService/prescription.service';
 import { Prescription } from '../prescription/prescription';
+import { FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 
@@ -49,6 +51,23 @@ export class MedicationProgressComponent  implements OnInit {
        ) {
 
       }
+
+      //Temp
+
+      public loginForm = new FormGroup({
+        email: new FormControl("email", Validators.required),
+        password: new FormControl("password", Validators.required)
+      });
+      doLogin(event: any) {
+        // Show the value of the form
+        let formData = this.loginForm.value;
+        // { email: 'blah@blah.net', password: 'imnottelling1' }
+        console.log(formData);
+        // Or, grab the value of one control:
+        
+
+      }
+      //End temp
 
       getStyle() 
       {
@@ -114,12 +133,15 @@ export class MedicationProgressComponent  implements OnInit {
     //balanceMedication: number;
     //prescriptions: Prescription[];
   prescriptions : Prescription[] = [
-        {id: 1, rxname: 'Concerta', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
+        {id: 1, rxname: 'Xanax', totalDailyAmount:4 , pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
         {id: 2, rxname: 'Vicodin', totalDailyAmount:4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily'},
-        {id: 3, rxname: 'Ibuprofen', totalDailyAmount:4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily'}
+        {id: 3, rxname: 'Synthroid', totalDailyAmount:4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily'}
     ];
 
-
+    onSubmit()
+    {
+      console.log('Works');
+    }
 
     getWidth(prescription: Prescription) {
         

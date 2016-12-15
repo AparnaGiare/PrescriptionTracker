@@ -12,21 +12,36 @@ var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var prescription_service_1 = require('../prescriptionService/prescription.service');
 var prescription_1 = require('../prescription/prescription');
+var forms_1 = require('@angular/forms');
+var forms_2 = require('@angular/forms');
 var MedicationProgressComponent = (function () {
     function MedicationProgressComponent(router, prescriptionService) {
         this.router = router;
         this.prescriptionService = prescriptionService;
         this.active = true;
         this.prescriptionModel = new prescription_1.Prescription(4, "", 0, 0, 0, 0, "Daily");
+        //Temp
+        this.loginForm = new forms_2.FormGroup({
+            email: new forms_2.FormControl("email", forms_1.Validators.required),
+            password: new forms_2.FormControl("password", forms_1.Validators.required)
+        });
         this.title = "Medication Progress";
         //balanceMedication: number;
         //prescriptions: Prescription[];
         this.prescriptions = [
-            { id: 1, rxname: 'Concerta', totalDailyAmount: 4, pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
+            { id: 1, rxname: 'Xanax', totalDailyAmount: 4, pillTakenToday: 1, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
             { id: 2, rxname: 'Vicodin', totalDailyAmount: 4, pillTakenToday: 2, dosage: 2, frequencyAmount: 1, frequency: 'Daily' },
-            { id: 3, rxname: 'Ibuprofen', totalDailyAmount: 4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily' }
+            { id: 3, rxname: 'Synthroid', totalDailyAmount: 4, pillTakenToday: 3, dosage: 2, frequencyAmount: 1, frequency: 'Daily' }
         ];
     }
+    MedicationProgressComponent.prototype.doLogin = function (event) {
+        // Show the value of the form
+        var formData = this.loginForm.value;
+        // { email: 'blah@blah.net', password: 'imnottelling1' }
+        console.log(formData);
+        // Or, grab the value of one control:
+    };
+    //End temp
     MedicationProgressComponent.prototype.getStyle = function () {
         if (this.showStyle) {
             return "yellow";
@@ -79,6 +94,9 @@ var MedicationProgressComponent = (function () {
             _this.prescriptions.push(prescription);
             //this.selectedHero = null;
         });
+    };
+    MedicationProgressComponent.prototype.onSubmit = function () {
+        console.log('Works');
     };
     MedicationProgressComponent.prototype.getWidth = function (prescription) {
         this.selectedPrescription = prescription;

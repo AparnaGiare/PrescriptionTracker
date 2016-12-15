@@ -46,10 +46,22 @@
         </div>
       </div>
         <div class="form-group darktext">
-         <label for="frequency">Frequency</label>
-            <input type="text" class="form-control" id="frequency" required [(ngModel)]="model.frequency" name="frequency" [value]="Daily">
-          
-            
+        <label for="frequency">Frequency</label>
+            <select class="form-control" id="frequency" required [(ngModel)]="model.frequency" name="frequency">
+                    <option *ngFor="let d of frequency" [value]="d">{{d}}</option>
+            </select>
+        </div>
+
+        <div class="form-group darktext">
+          <label for="frequency">Days to take: <br></label>
+            <input type="checkbox" name="Mon" value="Mon" checked="checked"> Mon
+            <input type="checkbox" name="Tue" value="Tue" > Tue
+            <input type="checkbox" name="Wed" value="Wed" checked="checked"> Wed
+            <input type="checkbox" name="Thur" value="Thur" > Thur
+            <input type="checkbox" name="Fri" value="Fri" checked="checked"> Fri
+            <input type="checkbox" name="Sat" value="Sat" > Sat
+            <input type="checkbox" name="Sun" value="Sun"   > Sun 
+
         </div>
 
       <button type="submit" [disabled]="!frequencyAmount.valid || !dosage.valid || !name.valid" class="btn btn-primary darktext">Submit</button>

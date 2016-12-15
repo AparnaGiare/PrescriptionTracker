@@ -5,7 +5,8 @@
                 
       <div class="col-md-3" *ngFor="let prescription of prescriptions" >
         <div class="well">
-          <h3 class="text-primary text-center"><span class="label label-primary">  {{prescription.rxname}}</span></h3><br>
+          <h3 class="text-primary text-center"><span class="label label-primary">  {{prescription.rxname}}</span>  <button type="button" (click)="confirmModal.open($event, active)" class="btn-sample btn-sm"> Take </button>  </h3>    <br>
+          <!-- <h3 class="text-primary text-center"><span class="label label-primary">  {{prescription.rxname}}</span></h3><br>    -->
             <h4 class="text-primary"><span class="label label-primary pull-right">{{prescription.totalDailyAmount}}</span> {{TotalViewAmountPhrase}} </h4>
             <h4 class="text-success"><span class="label label-success pull-right">{{prescription.pillTakenToday}}</span>  {{PrescriptionConsumedPhrase}} </h4>
             <h4 class="text-danger"><span class="label label-danger pull-right">{{prescription.totalDailyAmount - prescription.pillTakenToday}}</span> Balance left </h4>
@@ -53,11 +54,42 @@
         <label class="dark" for="frequencyAmount">How many times</label>
         <input type="number" class="form-control" id="frequencyAmount" required [(ngModel)]="prescriptionModel.frequencyAmount" name="frequencyAmount" #frequencyAmount="ngModel">
       </div>
-        <div class="form-group">
-         <label class="dark" for="frequency">Frequency</label>
-         <input  type="text" class="form-control" id="frequency" required name="frequency"
-          [(ngModel)]="prescriptionModel.frequency" #frequency="ngModel" value="Daily">
+      <div class="form-group">
+       <label class="dark" for="frequency">Frequency</label>
+       <select>
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+      </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="form-group darktext">
+          <label class="dark"  for="frequency">Days to take: <br></label>
+            <input type="checkbox" name="Mon" value="Mon" checked="checked"> Mon
+            <input type="checkbox" name="Tue" value="Tue" > Tue
+            <input type="checkbox" name="Wed" value="Wed" checked="checked"> Wed
+            <input type="checkbox" name="Thur" value="Thur" > Thur
+            <input type="checkbox" name="Fri" value="Fri" checked="checked"> Fri
+            <input type="checkbox" name="Sat" value="Sat" > Sat
+            <input type="checkbox" name="Sun" value="Sun"   > Sun 
         </div>
   </form>
 </div>
 </modal>
+
+<!-- Pop up confirmation window  -->
+<confirmModal #confirmModal (confirm)="addToDashboard(prescriptionModel)">
+  <span title>Take A Prescription</span>
+  <div content class="mdl-card__supporting-text">
+  <form action="#" *ngIf="active">
+
+       <div class="form-group">
+        <label class="dark" for="frequencyAmount">How many times</label>
+        <input type="number" class="form-control" id="frequencyAmount" required [(ngModel)]="prescriptionModel.frequencyAmount" name="frequencyAmount" #frequencyAmount="ngModel">
+      </div>
+  </form>
+</div>
+</confirmModal>
+<!-- end of confirmation window  --> 

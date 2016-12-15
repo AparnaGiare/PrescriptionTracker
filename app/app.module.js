@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
+var forms_2 = require('@angular/forms');
 require('./rxjs-extensions');
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
@@ -34,6 +35,7 @@ var medicationDashboard_component_1 = require('./medFrequencyViews/medicationDas
 var dailyPrescription_component_1 = require('./medFrequencyViews/dailyPrescription.component');
 var weeklyPrescription_component_1 = require('./medFrequencyViews/weeklyPrescription.component');
 var monthlyPrescription_component_1 = require('./medFrequencyViews/monthlyPrescription.component');
+var approval_modal_component_1 = require('./approvalModal/approval.modal.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,6 +44,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                forms_2.ReactiveFormsModule,
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 //InMemoryWebApiModule.forRoot(PrescriptionDataService),
@@ -104,7 +107,8 @@ var AppModule = (function () {
                 medicationDashboard_component_1.medicationDashboardComponent,
                 dailyPrescription_component_1.DailyProgressComponent,
                 weeklyPrescription_component_1.WeeklyProgressComponent,
-                monthlyPrescription_component_1.MonthlyProgressComponent
+                monthlyPrescription_component_1.MonthlyProgressComponent,
+                approval_modal_component_1.ApprovalnModalComponent
             ],
             providers: [
                 pharmacies_service_1.PharmaciesService,

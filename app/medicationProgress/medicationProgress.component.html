@@ -3,6 +3,7 @@
   <div class="col-sm-12">
     <div class="row">
                 
+      <?php echo "hello";?>
       <div class="col-md-3" *ngFor="let prescription of prescriptions" >
         <div class="well">
           <h3 class="text-primary text-center"><span class="label label-primary">{{prescription.id}} --  {{prescription.rxname}}</span></h3><br>
@@ -11,10 +12,10 @@
             <h4 class="text-danger"><span class="label label-danger pull-right">{{prescription.totalDailyAmount - prescription.pillTakenToday}}</span> Balance left </h4>
         </div>
         <div class="progress">
-  <div class="progress-bar progress-bar-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width]="getWidth(prescription)">
-    ({{prescription.pillTakenToday / prescription.totalDailyAmount * 100}})%
-  </div>
-</div>
+          <div class="progress-bar progress-bar-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width]="getWidth(prescription)">
+              ({{prescription.pillTakenToday / prescription.totalDailyAmount * 100}})%
+          </div>
+        </div>
         
       </div>    <!-- end of loop -->
       <div class="col-md-2">
@@ -37,7 +38,7 @@
 <modal #configModal (confirm)="addToDashboard(prescriptionModel)">
   <span title>Add New Prescription</span>
   <div content class="mdl-card__supporting-text">
-  <form action="#" *ngIf="active">
+  <form (ngSubmit)="onSubmit()" *ngIf="active">
 
         <div class="form-group">
          <label class="dark" for="rxname">Medication Name</label>
@@ -59,5 +60,11 @@
           [(ngModel)]="prescriptionModel.frequency" #frequency="ngModel" value="Daily">
         </div>
   </form>
+
+  <form action="https://www.google.com" target="_blank" method="POST" #form>
+    <input name="q" value="test">
+    <button type="submit" (click)="form.submit()">Search</button>
+</form>
+
 </div>
 </modal>
